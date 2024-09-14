@@ -1,7 +1,7 @@
 // pages/index.js
+"use client";
 
 import { useState } from "react";
-import styles from "../styles/Home.module.css";
 
 export default function Home() {
   const [todos, setTodos] = useState([]);
@@ -18,7 +18,7 @@ export default function Home() {
   };
 
   return (
-    <div className={styles.todoContainer}>
+    <div className="todoContainer">
       <h1>To-Do List</h1>
       <input
         type="text"
