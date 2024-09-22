@@ -6,10 +6,9 @@ function App() {
 
   // const [state1, setCount] = useState<number>(0);
   // const [state2, setDouble] = useState<number>();
-  const someFunction = () => {};
+  // const someFunction = () => {};
   // useEffect(someFunction, [state1, state2]);
-
-  useEffect(someFunction);
+  // useEffect(someFunction);
 
   useEffect(() => {
     setDouble(2 * count);
