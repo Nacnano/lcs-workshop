@@ -9,6 +9,8 @@ body {
 }
 
 .todo-container {
+  display: flex;
+  flex-direction: column;
   background: white;
   padding: 20px;
   border-radius: 10px;
@@ -22,7 +24,6 @@ h1 {
 input {
   padding: 10px;
   width: 250px;
-  margin-right: 10px;
   border-radius: 5px;
   border: 1px solid #ccc;
 }
@@ -66,4 +67,8 @@ li button {
 
 li button:hover {
   background-color: #c82333;
+}
+
+#todo-input {
+  margin-bottom: 5px;
 }

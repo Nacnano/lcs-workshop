@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio - Chotpisit Adunsehawat</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <img src="image.png" alt="Profile Picture" class="profile-img" />
+      <h1>Chotpisit Adunsehawat (Nac)</h1>
+      <p class="tagline">A student who wants to learn more</p>
+    </header>
+
+    <section class="content">
+      <h2>Achievements</h2>
+      <ul>
+        <li class="list-item" data-modal="Swimming Gold medal details...">
+          Gold Medal in Swimming
+        </li>
+      </ul>
+
+      <h2>Projects</h2>
+      <ul>
+        <li class="list-item" data-modal="Details about Science Project...">
+          Science Project: <em>Exploring Renewable Energy</em>
+        </li>
+        <li class="list-item" data-modal="Details about Portfolio website...">
+          Portfolio Website: <em>Creating a Personal Brand</em>
+        </li>
+      </ul>
+    </section>
+
+    <footer>
+      <p>© 2024 Chotpisit Adunsehawat. All rights reserved.</p>
+    </footer>
+
+    <!-- Modal Structure -->
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <p id="modal-text"></p>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
