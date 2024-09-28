@@ -1,19 +1,30 @@
 import { useEffect, useState } from "react";
-
+import Tab from "./Tab";
+import { animals } from "./data";
 function App() {
+  const [searchValue, setSearchValue] = useState<string>();
+  const [filteredAnimals, setFilteredAnimals] = useState<string[]>(animals);
   const [count, setCount] = useState<number>(0);
   const [double, setDouble] = useState<number>();
+  const [showTab, setShowTab] = useState<boolean>(false);
 
-  // const [state1, setCount] = useState<number>(0);
-  // const [state2, setDouble] = useState<number>();
-  // const someFunction = () => {};
-  // useEffect(someFunction, [state1, state2]);
-  // useEffect(someFunction);
+  let count2 = 0;
 
   useEffect(() => {
     setDouble(2 * count);
   }, [count]);
 
+  function onInputChange(e) {
+    const value = e.target.value;
+    setSearchValue(value);
+  }
+
+  useEffect(() => {
+    const filteredAnimals2 = animals.filter((animal) =>
+      animal.includes(searchValue)
+    );
+    setFilteredAnimals(filteredAnimals2);
+  }, [searchValue]);
   return (
     <>
       <div
@@ -26,9 +37,22 @@ function App() {
           flexDirection: "column", // Stack elements vertically
         }}
       >
+        <input type="text" onChange={onInputChange}></input>
+        <ol>
+          {filteredAnimals.map((animal) => (
+            <li>{animal}</li>
+          ))}
+        </ol>
+        {/* <button onClick={() => setShowTab((prev) => !prev)}>Toggle Show</button>
+        {showTab && <Tab name="Project1" desc="Description1" />}
         <h3>Count: {count}</h3>
         <h3>Double: {double}</h3>
+
+        <h3> Count2 : {count2}</h3>
         <button onClick={() => setCount((prev) => prev + 1)}>Increase</button>
+        <button onClick={() => (console.log(count2), (count2 = count2 + 1))}>
+          Increase 2
+        </button> */}
       </div>
     </>
   );
