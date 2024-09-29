@@ -25,6 +25,18 @@ function App() {
     );
     setFilteredAnimals(filteredAnimals2);
   }, [searchValue]);
+
+  const [boxes, setBoxes] = useState<string[]>([
+    "X",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+  ]);
   return (
     <>
       <div
@@ -37,12 +49,15 @@ function App() {
           flexDirection: "column", // Stack elements vertically
         }}
       >
-        <input type="text" onChange={onInputChange}></input>
+        {boxes.map((box) => {
+          return <div>{box}</div>;
+        })}
+        {/* <input type="text" onChange={onInputChange}></input>
         <ol>
           {filteredAnimals.map((animal) => (
             <li>{animal}</li>
           ))}
-        </ol>
+        </ol> */}
         {/* <button onClick={() => setShowTab((prev) => !prev)}>Toggle Show</button>
         {showTab && <Tab name="Project1" desc="Description1" />}
         <h3>Count: {count}</h3>
