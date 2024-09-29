@@ -20,6 +20,13 @@ app.get("/", (req: Request, res: Response) => {
   res.send("Hello, TypeScript Express!");
 });
 
+app.get("/fetch", async (req, res) => {
+  const response = await fetch("https://reqres.in/api/users/2");
+  const data = await response.json();
+  console.log(data);
+  res.json(data);
+});
+
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
 });
