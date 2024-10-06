@@ -11,8 +11,6 @@ var corsOptions = {
 
 app.use(cors(corsOptions));
 
-app.use(express.json());
-
 app.use(express.json()); // enable JSON parsing in the request body
 app.use("/task", taskRoutes); // use the task API routes
 
