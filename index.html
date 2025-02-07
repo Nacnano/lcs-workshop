@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nac's Portfolio</title>
+    <style>
+      /* General Styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Arial", sans-serif;
+      }
+      body {
+        background-color: #f3f4f6;
+        color: #333;
+      }
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      /* Header Section */
+      header {
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        color: #fff;
+        text-align: center;
+        padding: 3rem 1rem;
+      }
+      header h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        font-weight: 700;
+      }
+      header p {
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+      }
+      nav {
+        margin-top: 1rem;
+      }
+      nav a {
+        display: inline-block;
+        margin: 0 1rem;
+        padding: 0.6rem 1.5rem;
+        color: #fff;
+        background-color: rgba(255, 255, 255, 0.2);
+        border-radius: 25px;
+        font-size: 1rem;
+        transition: all 0.3s ease-in-out;
+        position: relative;
+      }
+      nav a:hover {
+        background-color: #fff;
+        color: #667eea;
+        transform: translateY(-3px);
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+      }
+
+      /* Section Styles */
+      section {
+        max-width: 1200px;
+        margin: 3rem auto;
+        padding: 0 1rem;
+        text-align: center;
+      }
+      section h2 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        color: #5a67d8;
+      }
+      section p {
+        font-size: 1.1rem;
+        line-height: 1.6;
+        margin-bottom: 2rem;
+        color: #555;
+      }
+
+      /* Project Cards */
+      .projects {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2rem;
+      }
+      .project-card {
+        width: 300px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s, box-shadow 0.3s;
+        overflow: hidden;
+        cursor: pointer;
+      }
+      .project-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+      }
+      .project-card h3 {
+        background-color: #667eea;
+        color: #fff;
+        font-size: 1.3rem;
+        padding: 1rem;
+        margin: 0;
+      }
+      .project-card p {
+        padding: 1rem;
+        color: #555;
+        font-size: 1rem;
+      }
+
+      /* Modal Styles */
+      .modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        z-index: 1000;
+        justify-content: center;
+        align-items: center;
+        animation: fadeIn 0.3s;
+      }
+      .modal-content {
+        background-color: #fff;
+        padding: 2rem;
+        border-radius: 10px;
+        max-width: 600px;
+        width: 90%;
+        text-align: center;
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+      }
+      .modal-content h3 {
+        color: #667eea;
+        margin-bottom: 1rem;
+      }
+      .modal-content p {
+        margin-bottom: 1.5rem;
+        color: #555;
+      }
+      .close-btn {
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        color: #fff;
+        background-color: #667eea;
+        border: none;
+        border-radius: 5px;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+      .close-btn:hover {
+        background-color: #5a67d8;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Welcome to Nac's Portfolio</h1>
+      <p>Software Engineer | Data Scientist | Creator</p>
+      <nav>
+        <a href="#about">About Me</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <section id="about">
+      <h2>About Me</h2>
+      <p>
+        Hello! I’m Nac, a passionate Software Engineer and Data Scientist. I
+        enjoy solving complex problems, creating innovative applications, and
+        exploring data insights to make a meaningful impact. Let's build
+        something amazing together!
+      </p>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="projects">
+        <div class="project-card" data-modal="modal1">
+          <h3>Chess Notation Detector</h3>
+          <p>
+            A tool to detect chess moves from game videos using advanced image
+            processing techniques.
+          </p>
+        </div>
+        <div class="project-card" data-modal="modal2">
+          <h3>Borrower Risk Predictor</h3>
+          <p>
+            A machine learning model to predict long-overdue borrowers based on
+            financial data.
+          </p>
+        </div>
+        <div class="project-card" data-modal="modal3">
+          <h3>University Dating App</h3>
+          <p>
+            A recommender system tailored to connect university students in
+            meaningful ways.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <div id="modal1" class="modal">
+      <div class="modal-content">
+        <h3>Chess Notation Detector</h3>
+        <p>
+          This project leverages advanced image processing to detect chess moves
+          from recorded game videos, helping players analyze games effectively.
+        </p>
+        <button class="close-btn">Close</button>
+      </div>
+    </div>
+    <div id="modal2" class="modal">
+      <div class="modal-content">
+        <h3>Borrower Risk Predictor</h3>
+        <p>
+          This project uses machine learning models to predict long-overdue
+          borrowers, aiding financial institutions in risk management.
+        </p>
+        <button class="close-btn">Close</button>
+      </div>
+    </div>
+    <div id="modal3" class="modal">
+      <div class="modal-content">
+        <h3>University Dating App</h3>
+        <p>
+          A platform designed to connect university students based on mutual
+          interests, using a personalized recommender system.
+        </p>
+        <button class="close-btn">Close</button>
+      </div>
+    </div>
+
+    <section id="contact">
+      <h2>Contact Me</h2>
+      <p>
+        Let's connect! Feel free to reach out to me for collaborations,
+        inquiries, or just a friendly chat.
+      </p>
+      <p>
+        Email:
+        <a href="mailto:chotpisit.adunsehawat@example.com"
+          >chotpisit.adunsehawat@example.com</a
+        >
+      </p>
+    </section>
+
+    <footer>&copy; 2025 Nac. All Rights Reserved.</footer>
+
+    <script>
+      const projectCards = document.querySelectorAll(".project-card");
+      const modals = document.querySelectorAll(".modal");
+      const closeButtons = document.querySelectorAll(".close-btn");
+
+      projectCards.forEach((card) => {
+        card.addEventListener("click", () => {
+          const modalId = card.getAttribute("data-modal");
+          document.getElementById(modalId).style.display = "flex";
+        });
+      });
+
+      closeButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          button.closest(".modal").style.display = "none";
+        });
+      });
+
+      window.addEventListener("click", (e) => {
+        modals.forEach((modal) => {
+          if (e.target === modal) {
+            modal.style.display = "none";
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

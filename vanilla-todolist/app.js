@@ -26,16 +26,12 @@ function addTodo() {
   input.value = ""; // Clear the input field
 }
 
-function changeColor() {
-  title.style = "color: red";
-}
-
 function hi() {
   window.alert("HI");
 }
 
 // Add event listener to button
-addBtn.addEventListener("click", hi);
+addBtn.addEventListener("click", addTodo);
 
 // Add task with Enter key
 input.addEventListener("keypress", function (e) {

@@ -1,4 +1,4 @@
-const name = "Nac";
+const name1 = "Nac";
 
 let age = 5;
 age = 20;
@@ -26,6 +26,7 @@ const person2 = {
   name: "Nac",
   foods: ["Sushi", "Pizza", "Apple"],
 };
+
 const person3 = {
   id: 12345,
   name: "Nac",
